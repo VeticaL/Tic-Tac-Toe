@@ -19,9 +19,9 @@ const checkWin = () => {
   ];
   wins.forEach((e) => {
     if (
-      (boxtext[e[0]].innerText === boxtext[e[1]].innerText)&&
-      (boxtext[e[2]].innerText === boxtext[e[1]].innerText)&&
-      (boxtext[e[0]].innerText !== "")
+      boxtext[e[0]].innerText === boxtext[e[1]].innerText &&
+      boxtext[e[2]].innerText === boxtext[e[1]].innerText &&
+      boxtext[e[0]].innerText !== ""
     ) {
       document.querySelector(".info").innerText =
         boxtext[e[0]].innerText + " Won";
@@ -38,7 +38,7 @@ Array.from(boxes).forEach((Element) => {
       boxtext.innerText = turn;
       turn = changeTurn();
       checkWin();
-      if(!gameover) {
+      if (!gameover) {
         document.getElementsByClassName("info")[0].innerText = turn + " Turn";
       }
     }
